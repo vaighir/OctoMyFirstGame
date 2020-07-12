@@ -7,6 +7,7 @@ public class OctoMovementController : MonoBehaviour
     public float speed;
     private Rigidbody2D octoRigidbody;
     private Vector3 change;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class OctoMovementController : MonoBehaviour
     private void InitializeVariables()
     {
         octoRigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,11 +27,16 @@ public class OctoMovementController : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxis("Horizontal");
         change.y = Input.GetAxis("Vertical");
-        if(change != Vector3.zero)
+
+        if (change != Vector3.zero)
         {
             Move();
+            animator.SetFloat("moveX", change.x);
+            animator.SetFloat("moveY", change.y);
         }
     }
+
+
 
     private void Move()
     {
