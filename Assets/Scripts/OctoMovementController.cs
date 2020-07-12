@@ -28,15 +28,23 @@ public class OctoMovementController : MonoBehaviour
         change.x = Input.GetAxis("Horizontal");
         change.y = Input.GetAxis("Vertical");
 
+        Swim();
+    }
+
+    private void Swim()
+    {
         if (change != Vector3.zero)
         {
             Move();
             animator.SetFloat("moveX", change.x);
             animator.SetFloat("moveY", change.y);
+            animator.SetBool("swimming", true);
+        }
+        else
+        {
+            animator.SetBool("swimming", false);
         }
     }
-
-
 
     private void Move()
     {
