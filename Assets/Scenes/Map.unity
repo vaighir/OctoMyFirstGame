@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 242636505}
   - component: {fileID: 242636508}
   - component: {fileID: 242636507}
+  - component: {fileID: 242636509}
   m_Layer: 0
   m_Name: octo
   m_TagString: Untagged
@@ -335,6 +336,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &242636509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242636504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc47b6ecb8d50a4d946450d02e9d042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
 --- !u!1 &267401667
 GameObject:
   m_ObjectHideFlags: 0
