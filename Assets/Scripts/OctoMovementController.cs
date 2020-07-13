@@ -24,15 +24,25 @@ public class OctoMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = 15f;
         change = Vector3.zero;
+        animator.SetBool("dashing", false);
+
         change.x = Input.GetAxis("Horizontal");
         change.y = Input.GetAxis("Vertical");
 
         Swim();
+
+        if (Input.GetKeyDown("space"))
+        {
+            speed = 30f;
+            animator.SetBool("dashing", true);
+        }
     }
 
     private void Swim()
     {
+        
         if (change != Vector3.zero)
         {
             Move();
