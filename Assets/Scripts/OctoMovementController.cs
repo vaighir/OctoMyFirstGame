@@ -32,28 +32,24 @@ public class OctoMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        change = Vector3.zero;
-
-        if( Time.time - lastDashedTime > dashDuration)
-        {
-            speed = swimSpeed;
-            dashing = false;
-            animator.SetBool("dashing", dashing);
-        }
-        
+        ResetMovement();
 
         change.x = Input.GetAxis("Horizontal");
         change.y = Input.GetAxis("Vertical");
 
         Swim();
+        Dash();  
+    }
 
-        if (Input.GetKeyDown("space") && !dashing)
+    private void ResetMovement()
+    {
+        change = Vector3.zero;
+
+        if (Time.time - lastDashedTime > dashDuration)
         {
-            speed = dashSpeed;
-            dashing = true;
+            speed = swimSpeed;
+            dashing = false;
             animator.SetBool("dashing", dashing);
-            lastDashedTime = Time.time;
         }
     }
 
@@ -70,6 +66,17 @@ public class OctoMovementController : MonoBehaviour
         else
         {
             animator.SetBool("swimming", false);
+        }
+    }
+
+    private void Dash()
+    {
+        if (Input.GetKeyDown("space") && !dashing)
+        {
+            speed = dashSpeed;
+            dashing = true;
+            animator.SetBool("dashing", dashing);
+            lastDashedTime = Time.time;
         }
     }
 
