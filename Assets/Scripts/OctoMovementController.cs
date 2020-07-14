@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OctoMovementController : MonoBehaviour
 {
-    private float speed, lastDashedTime;
+    private float speed, swimSpeed, dashSpeed, dashDuration, lastDashedTime;
     private Rigidbody2D octoRigidbody;
     private Vector3 change;
     private Animator animator;
@@ -22,7 +22,11 @@ public class OctoMovementController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         lastDashedTime = Time.time;
-        speed = 10f;
+        swimSpeed = 10f;
+        dashSpeed = 20f;
+        speed = swimSpeed;
+        dashDuration = 0.5f;
+        dashing = false;
     }
 
     // Update is called once per frame
@@ -31,9 +35,9 @@ public class OctoMovementController : MonoBehaviour
         
         change = Vector3.zero;
 
-        if( Time.time - lastDashedTime > 0.5f)
+        if( Time.time - lastDashedTime > dashDuration)
         {
-            speed = 10f;
+            speed = swimSpeed;
             dashing = false;
             animator.SetBool("dashing", dashing);
         }
@@ -46,7 +50,7 @@ public class OctoMovementController : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            speed = 20f;
+            speed = dashSpeed;
             dashing = true;
             animator.SetBool("dashing", dashing);
             lastDashedTime = Time.time;
