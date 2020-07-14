@@ -48,7 +48,7 @@ public class OctoMovementController : MonoBehaviour
 
         Swim();
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && !dashing)
         {
             speed = dashSpeed;
             dashing = true;
