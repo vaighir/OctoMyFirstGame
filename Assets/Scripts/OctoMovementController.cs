@@ -55,8 +55,6 @@ public class OctoMovementController : MonoBehaviour
             animator.SetBool("dashing", dashing);
             lastDashedTime = Time.time;
         }
-
-        Debug.Log(dashing);
     }
 
     private void Swim()
