@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OctoMovementController : MonoBehaviour
+public class OctoController : MonoBehaviour
 {
     public int lives;
     private float speed, swimSpeed, dashSpeed, dashDuration, lastDashedTime;

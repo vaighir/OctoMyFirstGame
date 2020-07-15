@@ -233,8 +233,8 @@ GameObject:
   - component: {fileID: 242636505}
   - component: {fileID: 242636508}
   - component: {fileID: 242636507}
-  - component: {fileID: 242636509}
   - component: {fileID: 242636510}
+  - component: {fileID: 242636509}
   m_Layer: 0
   m_Name: octo
   m_TagString: Player
@@ -117420,6 +117420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3df7612ff5b5d445b00b4ceb7a348a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 0
 --- !u!1 &1970970860
 GameObject:
   m_ObjectHideFlags: 0

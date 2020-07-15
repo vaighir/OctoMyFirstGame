@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour
     private void InitializeVariables()
     {
         GameObject octo = GameObject.FindWithTag("Player");
-        OctoMovementController octoController = octo.GetComponent<OctoMovementController>();
+        OctoController octoController = octo.GetComponent<OctoController>();
         lives = octoController.lives;
     }
 
