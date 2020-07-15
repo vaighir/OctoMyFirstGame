@@ -23,8 +23,8 @@ public class OctoController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         lastDashedTime = Time.time;
-        swimSpeed = 10f;
-        dashSpeed = 20f;
+        swimSpeed = 20f;
+        dashSpeed = 40f;
         speed = swimSpeed;
         dashDuration = 0.5f;
         dashing = false;
