@@ -117237,7 +117237,7 @@ GameObject:
   - component: {fileID: 1522432264}
   - component: {fileID: 1522432263}
   m_Layer: 5
-  m_Name: Text
+  m_Name: score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117500,6 +117500,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 0
+  score: 0
+  scoreText: {fileID: 1522432263}
   hearts:
   - {fileID: 484548453}
   - {fileID: 924601265}
