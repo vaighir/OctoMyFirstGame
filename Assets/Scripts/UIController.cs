@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    public int lives;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        InitializeVariables();
+    }
+
+    private void InitializeVariables()
+    {
+        GameObject octo = GameObject.FindWithTag("Player");
+        OctoMovementController octoController = octo.GetComponent<OctoMovementController>();
+        lives = octoController.lives;
     }
 
     // Update is called once per frame
