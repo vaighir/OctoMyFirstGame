@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class OctoController : MonoBehaviour
 {
-    public int lives;
+    public int lives, score;
     private float speed, swimSpeed, dashSpeed, dashDuration, lastDashedTime;
     private Rigidbody2D octoRigidbody;
     private Vector3 change;
@@ -31,6 +31,7 @@ public class OctoController : MonoBehaviour
         dashDuration = 0.5f;
         dashing = false;
         lives = 3;
+        score = 0;
     }
 
     // Update is called once per frame

@@ -22,15 +22,13 @@ public class UIController : MonoBehaviour
     {
         GameObject octo = GameObject.FindWithTag("Player");
         octoController = octo.GetComponent<OctoController>();
-
-        // TODO get score from the appropriate controller
-        score = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         lives = octoController.lives;
+        score = octoController.score;
 
         for (int i = 0; i < 3; i++)
         {
