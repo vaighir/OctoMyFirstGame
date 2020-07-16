@@ -34,7 +34,8 @@ public class FishController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             octoController.Eat(1);
-
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<CapsuleCollider2D>().enabled = false;
         }
     }
 }
