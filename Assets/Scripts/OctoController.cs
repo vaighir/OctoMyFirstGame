@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OctoController : MonoBehaviour
 {
@@ -91,5 +92,10 @@ public class OctoController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         lives = lives - damage;
+
+        if(lives <= 0)
+        {
+            SceneManager.LoadScene("Map");
+        }
     }
 }
