@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class OctoController : MonoBehaviour
@@ -40,7 +41,7 @@ public class OctoController : MonoBehaviour
         change.y = Input.GetAxis("Vertical");
 
         Swim();
-        Dash();  
+        Dash();
     }
 
     private void ResetMovement()
@@ -85,5 +86,10 @@ public class OctoController : MonoBehaviour
     private void Move()
     {
         octoRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        lives = lives - damage;
     }
 }
