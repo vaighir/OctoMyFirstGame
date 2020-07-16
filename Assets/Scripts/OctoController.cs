@@ -99,4 +99,9 @@ public class OctoController : MonoBehaviour
             SceneManager.LoadScene("Map");
         }
     }
+
+    public void Eat(int value)
+    {
+        score += value;
+    }
 }
