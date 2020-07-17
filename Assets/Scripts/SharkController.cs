@@ -8,6 +8,7 @@ public class SharkController : MonoBehaviour
     public OctoController octoController;
     public Vector2 maxPosition;
     public Vector2 minPosition;
+    public Vector2 startPosition;
 
     // Start is called before the first frame update
     void Start()
