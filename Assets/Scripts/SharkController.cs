@@ -22,9 +22,11 @@ public class SharkController : MonoBehaviour
         octoController = octo.GetComponent<OctoController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Player"))
+        {
+            octoController.TakeDamage(3);
+        }
     }
 }
