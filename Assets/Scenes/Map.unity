@@ -33549,6 +33549,7 @@ GameObject:
   - component: {fileID: 980114182}
   - component: {fileID: 980114184}
   - component: {fileID: 980114183}
+  - component: {fileID: 980114185}
   m_Layer: 0
   m_Name: SharkPrefab
   m_TagString: Untagged
@@ -33633,6 +33634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed8d3df308cab0488ba76e5d24a94d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 8861480726252175340, guid: f0056305a23b54f4bb560d084e69e72b, type: 3}
+  - {fileID: 1264198412648948291, guid: f0056305a23b54f4bb560d084e69e72b, type: 3}
+  octoController: {fileID: 0}
 --- !u!61 &980114184
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33659,6 +33664,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.8645248, y: 1.3207436}
   m_EdgeRadius: 0
+--- !u!50 &980114185
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980114180}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1221670013
 GameObject:
   m_ObjectHideFlags: 0
