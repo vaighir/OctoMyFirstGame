@@ -5,7 +5,6 @@ using UnityEngine;
 public class FishController : MonoBehaviour
 {
     public Sprite[] sprites;
-    private Sprite sprite;
     public OctoController octoController;
 
     // Start is called before the first frame update
