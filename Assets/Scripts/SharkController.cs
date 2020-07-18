@@ -6,7 +6,7 @@ public class SharkController : MonoBehaviour
 {
     public Sprite[] sprites;
     private Animator animator;
-    private float speed, xDirection;
+    private float speed;
     
     public Vector2 maxPosition;
     public Vector2 minPosition;
@@ -27,13 +27,9 @@ public class SharkController : MonoBehaviour
     private void InitializeVariables()
     {
         speed = 10f;
-        xDirection = 0f;
 
-        SpriteRenderer s = GetComponent<SpriteRenderer>();
         GetComponent<SpriteRenderer>().sprite = sprites[0];
         
-        animator = GetComponent<Animator>();
-
         octo = GameObject.FindWithTag("Player");
         octoController = octo.GetComponent<OctoController>();
 
@@ -73,13 +69,12 @@ public class SharkController : MonoBehaviour
 
         if(targetPosition.x > transform.position.x)
         {
-            xDirection = 1f;
+            GetComponent<SpriteRenderer>().sprite = sprites[0];
         } else
         {
-            xDirection = -1f;
+            GetComponent<SpriteRenderer>().sprite = sprites[1];
         }
 
-        animator.SetFloat("xDirection", xDirection);
 
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
 
