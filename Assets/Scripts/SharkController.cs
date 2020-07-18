@@ -5,7 +5,8 @@ using UnityEngine;
 public class SharkController : MonoBehaviour
 {
     public Sprite[] sprites;
-    private float speed;
+    private Animator animator;
+    private float speed, xDirection;
     
     public Vector2 maxPosition;
     public Vector2 minPosition;
@@ -26,9 +27,12 @@ public class SharkController : MonoBehaviour
     private void InitializeVariables()
     {
         speed = 10f;
+        xDirection = 0f;
 
         SpriteRenderer s = GetComponent<SpriteRenderer>();
         GetComponent<SpriteRenderer>().sprite = sprites[0];
+        
+        animator = GetComponent<Animator>();
 
         octo = GameObject.FindWithTag("Player");
         octoController = octo.GetComponent<OctoController>();
@@ -66,6 +70,16 @@ public class SharkController : MonoBehaviour
         {
             targetPosition = startPosition; 
         }
+
+        if(targetPosition.x > transform.position.x)
+        {
+            xDirection = 1f;
+        } else
+        {
+            xDirection = -1f;
+        }
+
+        animator.SetFloat("xDirection", xDirection);
 
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
 
