@@ -5,6 +5,7 @@ using UnityEngine;
 public class SharkController : MonoBehaviour
 {
     public Sprite[] sprites;
+    private float speed;
     
     public Vector2 maxPosition;
     public Vector2 minPosition;
@@ -23,6 +24,8 @@ public class SharkController : MonoBehaviour
 
     private void InitializeVariables()
     {
+        speed = 10f;
+
         SpriteRenderer s = GetComponent<SpriteRenderer>();
         GetComponent<SpriteRenderer>().sprite = sprites[0];
 
@@ -36,20 +39,13 @@ public class SharkController : MonoBehaviour
     void Update()
     {
         DetectOcto();
-        Debug.Log(huntOcto);
+        Move();
 
-        if (huntOcto)
-        {
-            ChaseOcto();
-        }
     }
 
     private void DetectOcto()
     {
         Vector2 octoPosition = octo.transform.position;
-        Debug.Log("octo " + octoPosition);
-        Debug.Log("min " + minPosition);
-        Debug.Log("max " + maxPosition);
         
         if(octoPosition.x > minPosition.x && octoPosition.y > minPosition.y && octoPosition.x < maxPosition.x && octoPosition.y < maxPosition.y)
         {
@@ -60,9 +56,16 @@ public class SharkController : MonoBehaviour
         }
     }
 
-    private void ChaseOcto()
+    private void Move()
     {
-        Debug.Log("chasing");
+        if (huntOcto)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, octo.transform.position, Time.deltaTime * speed);
+        } else
+        {
+            transform.position = Vector2.MoveTowards(transform.position, startPosition, Time.deltaTime * speed);
+        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
