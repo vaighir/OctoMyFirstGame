@@ -10,6 +10,7 @@ public class SharkController : MonoBehaviour
     public Vector2 maxPosition;
     public Vector2 minPosition;
     public Vector2 startPosition;
+    private Vector2 targetPosition;
 
     private bool huntOcto;
 
@@ -60,12 +61,14 @@ public class SharkController : MonoBehaviour
     {
         if (huntOcto)
         {
-            transform.position = Vector2.MoveTowards(transform.position, octo.transform.position, Time.deltaTime * speed);
+            targetPosition = octo.transform.position;
         } else
         {
-            transform.position = Vector2.MoveTowards(transform.position, startPosition, Time.deltaTime * speed);
+            targetPosition = startPosition; 
         }
-        
+
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
