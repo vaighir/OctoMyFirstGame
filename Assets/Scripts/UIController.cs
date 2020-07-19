@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour
     public Text scoreText;
     public GameObject[] hearts;
     public Sprite heart;
-    public OctoController octoController;
+    public GameController gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -20,15 +20,15 @@ public class UIController : MonoBehaviour
 
     private void InitializeVariables()
     {
-        GameObject octo = GameObject.FindWithTag("Player");
-        octoController = octo.GetComponent<OctoController>();
+        GameObject game = GameObject.FindWithTag("GameController");
+        gameController = game.GetComponent<GameController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        lives = octoController.lives;
-        score = octoController.score;
+        lives = gameController.lives;
+        score = gameController.score;
 
         for (int i = 0; i < 3; i++)
         {

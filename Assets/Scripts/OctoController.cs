@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class OctoController : MonoBehaviour
 {
-    public int lives, score;
+    public int lives;
     private float speed, swimSpeed, dashSpeed, dashDuration, lastDashedTime;
     private Rigidbody2D octoRigidbody;
     private Vector3 change;
     private Animator animator;
     private bool dashing;
+
+    public GameController gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,9 @@ public class OctoController : MonoBehaviour
         dashDuration = 0.5f;
         dashing = false;
         lives = 3;
-        score = 0;
+
+        GameObject game = GameObject.FindWithTag("GameController");
+        gameController = game.GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -92,16 +94,11 @@ public class OctoController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        lives = lives - damage;
-
-        if(lives <= 0)
-        {
-            SceneManager.LoadScene("StartMenu");
-        }
+        gameController.UpdateLives(-damage);
     }
 
     public void Eat(int value)
     {
-        score += value;
+        gameController.UpdateScore(value);
     }
 }
