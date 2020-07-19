@@ -96,7 +96,7 @@ public class OctoController : MonoBehaviour
 
         if(lives <= 0)
         {
-            SceneManager.LoadScene("Map");
+            SceneManager.LoadScene("StartMenu");
         }
     }
 
