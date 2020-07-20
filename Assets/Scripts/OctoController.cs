@@ -9,6 +9,7 @@ public class OctoController : MonoBehaviour
     private Rigidbody2D octoRigidbody;
     private Vector3 change;
     private Animator animator;
+    public AudioSource hurt, collect;
     private bool dashing;
 
     public GameController gameController;
@@ -34,6 +35,7 @@ public class OctoController : MonoBehaviour
 
         GameObject game = GameObject.FindWithTag("GameController");
         gameController = game.GetComponent<GameController>();
+
     }
 
     // Update is called once per frame
@@ -94,11 +96,13 @@ public class OctoController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        hurt.Play();
         gameController.UpdateLives(-damage);
     }
 
     public void Eat(int value)
     {
+        collect.Play();
         gameController.UpdateScore(value);
     }
 }
