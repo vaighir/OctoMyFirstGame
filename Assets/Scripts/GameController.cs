@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public AudioSource die;
     public int score, lives;
 
     // Start is called before the first frame update
@@ -43,6 +44,7 @@ public class GameController : MonoBehaviour
 
     public void ExitToMenu()
     {
+        die.Play();
         SceneManager.LoadScene("StartMenu");
     }
 
