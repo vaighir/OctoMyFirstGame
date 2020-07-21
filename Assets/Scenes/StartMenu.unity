@@ -278,12 +278,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'DESIGN, CODE, ART, SOUND BY
+  m_Text: 'DESIGN, CODE, ART, SOUND BY VAIGHIR (https://github.com/vaighir)
 
-    FONT BY
+    FONT
+    BY https://opengameart.org/content/bitscript-true-type-font
 
-    CREATED 2020 FOR MY FIRST
-    GAME JAM'
+    CREATED 2020
+    FOR MY FIRST GAME JAM SUMMER 2020'
 --- !u!222 &273101141
 CanvasRenderer:
   m_ObjectHideFlags: 0
